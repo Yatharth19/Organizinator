@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'nunito', sans-serif;
+    background-color: rgb(6, 6, 6);
+    /* position: fixed;
+    top:0px;
+    left:0px;
+    z-index: 10; */
+}
+
+.navbar_part1{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -150px;
+}
+
+.navbar_part2{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -150px;
+}
+
+
+.navbar_item{
+    /* height: 90%; */
+    padding: 5px;
+    margin: 0px 15px 0px 15px;
+    font-size: 1.3rem;
+}
+
+.navbar_item__link{
+    text-decoration: none;
+    color: green;
+}
+
+.navbar_item__link:hover{
+    color: green;
+    font-weight: bold;
+}
+
+.button{
+    border: 1px solid #f0f0f0;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.active{
+    background-color: green;
+    color:white;
+}
+
+.active__link, .active__link:hover{
+    color: white;
+}
+
+.active:hover{
+    /* background-color: lightgreen;
+    color: white; */
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.cart_icon{
+    height: 50px;
+    width: 50px;
+}
+
+.cart_icon>img{
+    height: 100%;
+    width: 100%;
+}

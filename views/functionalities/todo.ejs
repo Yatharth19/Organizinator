@@ -1,0 +1,31 @@
+<%- include('../include/head.ejs') %>
+<!-- to add -->
+        <link href = '/CSS/navbar.css' type = 'text/css' rel = 'stylesheet' />
+        <link href = '/CSS/login.css' type = 'text/css' rel = 'stylesheet' />
+    </head>
+    <body>
+        <%- include('../include/navbar.ejs') %>
+        <main>
+            <div class = 'container'>
+                <h1 class = 'heading'>To Do</h1>
+                <div class = 'continer-1'>
+                    This is your To Do list:
+                    <form action = "" method = 'POST'>
+                        <label for = 'task'>Task:</label>
+                        <input type = 'text' class = 'task' name = 'name'>
+                        <button type = 'submit' id = 'add-task'>Add Task</button>
+                    </form>
+                    <% if (tasks != null) { %>
+                    <% var keys= Object.keys(tasks); for(var i=0;i<keys.length;i++) {%>
+                        <div class="todo-element">
+                            <%= keys[i] %> <a href="/todo/edit?id=<%= i %>" class="edit-button">Edit</a>
+                            <a href = "/todo?delete=<%= i %>" class="delete-button">Delete</a>
+                            <a href = "/todo?move=<%= i %>" class="move-button">Move to Queue</a>
+                        </div>
+                    <% } %>
+                    <% } %>
+                </div>
+                <!-- loop here -->
+            </div>
+        </main>
+<%- include('../include/foot.ejs') %>

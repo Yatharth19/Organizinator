@@ -1,0 +1,18 @@
+<%- include('../include/head.ejs') %>
+<!-- to add -->
+        <link href = '/CSS/navbar.css' type = 'text/css' rel = 'stylesheet' />
+        <link href = '/CSS/login.css' type = 'text/css' rel = 'stylesheet' />
+    </head>
+    <body>
+        <%- include('../include/navbar.ejs') %>
+        <main>
+            <div class = 'container'>
+                <h1 class = 'heading'><%= pageTitle %></h1>
+                <form action="" method="POST">
+                    <input type="text" id="task" value="<%= task %>" name="name"/>
+                    <button>Edit</button>
+                </form>
+            </div>
+            
+        </main>
+<%- include('../include/foot.ejs') %>

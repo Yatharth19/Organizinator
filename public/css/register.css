@@ -1,0 +1,47 @@
+form {
+    /* Style the form element */
+    width: 50%; /* Set the width of the form */
+    margin: 0 auto; /* Center the form on the page */
+    text-align: left; /* Align the form fields to the left */
+    padding: 20px; /* Add some padding around the form */
+    border: 1px solid #ccc; /* Add a border around the form */
+    border-radius: 4px; /* Round the corners of the border */
+  }
+  
+  /* Style the form fields */
+  form input,
+  form textarea,
+  form select {
+    width: 100%; /* Make the form fields take up the full width of the form */
+    padding: 12px; /* Add some padding to the form fields */
+    border: 1px solid #ccc; /* Add a border around the form fields */
+    border-radius: 4px; /* Round the corners of the border */
+    box-sizing: border-box; /* Set the box model for the form fields */
+    margin-top: 6px; /* Add some space between the form fields */
+    margin-bottom: 16px; /* Add some space between the form fields */
+    resize: vertical; /* Allow the textarea to be resized vertically */
+  }
+  
+  /* Style the form button */
+  form button {
+    background-color: #4CAF50; /* Set the background color of the button */
+    color: white; /* Set the text color of the button */
+    padding: 12px 20px; /* Add some padding to the button */
+    border: none; /* Remove the border from the button */
+    border-radius: 4px; /* Round the corners of the button */
+    cursor: pointer; /* Add a cursor to the button */
+    float: right; /* Float the button to the right */
+  }
+  
+  /* Style the form button when it is hovered */
+  form button:hover {
+    background-color: #45a049; /* Change the background color of the button on hover */
+  }
+  
+  /* Style the form container */
+  .container {
+    border-radius: 5px; /* Round the corners of the container */
+    background-color: #f2f2f2; /* Set the background color of the container */
+    padding: 20px; /* Add some padding to the container */
+  }
+  
