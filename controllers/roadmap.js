@@ -3,12 +3,9 @@ const roadmap = require('../models/Roadmap')
 const url = require('url')
 
 const getRoadMap = async (req, res, next) => {
-    // console.log('inside controllers')
-    // let isLoggedIn = false;
     try{
         if(!req.session){
             res.send('Not Authorized');
-            // isLoggedIn = req.session.isLoggedIn;
         }
         const user = req.session.user;
         const userId = user._id;
@@ -31,7 +28,6 @@ const getRoadMap = async (req, res, next) => {
             res.redirect('/roadmap')
         }
     }catch(err){
-        console.log(err);
         res.send('Some Error Occured');
     }
 }
@@ -42,12 +38,10 @@ const postRoadMap = async (req, res, next) => {
             res.send('Not authorized');
         }
         const user = req.session.user;
-        console.log(req.body);
         const roadMap = await roadmap.add(user, req.body.name);
         // getAllTasks();
         res.redirect('/roadmap');
     }catch(err){
-        console.log(err);
         res.send('Some error occured');
     }
 }
@@ -55,7 +49,6 @@ const postRoadMap = async (req, res, next) => {
 const getOneRoadMap = async (req, res, next) => {
     try{
         const parsedUrl = url.parse(req.url, true);
-        // console.log(parsedUrl);
         const query = parsedUrl.query;
         const ind = query.id;        
         const user = req.session.user;
@@ -65,7 +58,7 @@ const getOneRoadMap = async (req, res, next) => {
             task: roadMap
         });
     }catch(err){
-        console.log(err);
+        // console.log(err);
         res.send('Some error occured');
     }
 }

@@ -39,56 +39,6 @@ app.use('/queue', queueRoutes);
 app.use('/success-failures', sfRoutes);
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.get('/', (req, res) => {
-//     // res.send('<h1>hi</h1>')
-//     res.render('./auth/login', {
-//         pageTitle: 'Login'
-//     })
-// });
-
-// app.get('/dashboard', (req, res) => {
-//     res.render('./auth/dashboard', {
-//         pageTitle: 'Dashboard'
-//     })
-// });
-
-// app.get('/register', (req, res) => {
-//     res.render('./auth/register', {
-//         pageTitle: 'Register'
-//     })
-// });
-
-// app.get('/todo', (req, res) => {
-//     res.render('./functionalities/todo', {
-//         pageTitle: 'To-do'
-//     });
-// });
-
-// app.get('/roadmap', (req, res) => {
-//     res.render('./functionalities/roadmap', {
-//         pageTitle: 'Roadmap'
-//     });
-// });
-
-// app.get('/success-failure', (req, res) => {
-//     res.render('./functionalities/success-failure', {
-//         pageTitle: 'Success-Failure'
-//     });
-// });
-
-// app.get('/targets', (req, res) => {
-//     res.render('./functionalities/targets', {
-//         pageTitle: 'Targets'
-//     });
-// });
-
-// app.get('/thoughts', (req, res) => {
-//     res.render('./functionalities/thoughts', {
-//         pageTitle: 'Thoughts'
-//     });
-// });
-
-
 const port = process.env.PORT || 3000
 
 connectDB(() => {
@@ -96,18 +46,3 @@ connectDB(() => {
         console.log(`Server is running on http://localhost:${port}`);
     })
 })
-
-
-// const start = async() => {
-//     try{
-//         // console.log(process.env.MONGO_URI)
-//         await mongoConnect(process.env.MONGO_URI)
-//         app.listen(port, () => {
-//             console.log(`Server is running on http://localhost:${port}`);
-//         })
-//     }catch(error){
-//         console.log(error);
-//     }
-// }
-
-// start();
