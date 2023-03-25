@@ -17,7 +17,7 @@ const User = class User{
 
     save(){
         const db = getDB().client.db();
-        console.log(this)
+        // console.log(this)
         return db.collection('users').insertOne(this);
     }
 
@@ -27,7 +27,7 @@ const User = class User{
         const query = await db.collection('users').findOne({
             email: email
         })
-        console.log(query);
+        // console.log(query);
         if(query && query.password === password)
             return query;
         return null;
