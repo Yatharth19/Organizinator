@@ -46,12 +46,10 @@ const postRegister = (req, res, next) => {
     const name = req.body.name;
     email = req.body.email;
     const password = req.body.password;
-    console.log('Inside postRegister')
-    console.log(name, email, password);
     const user = new User(name, email, password);
     user.save().then(user => {
         console.log(user);
-        console.log('User saved in DB');
+        // console.log('User saved in DB');
     }).catch(err => console.log(err));
     res.redirect('/');
 }
@@ -65,7 +63,7 @@ const getLogout = (req, res, next) => {
 }
 
 const getDashboard = (req, res, next) => {
-    console.log(req.session.user)
+    // console.log(req.session.user)
     res.render('auth/dashboard', {
         pageTitle: 'Dashboard',
         name: req.session.user.name
