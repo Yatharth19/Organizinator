@@ -7,7 +7,11 @@ const getAllSF = async(req, res, next) => {
         res.send('Not Authorized');
     }
     const allSF = await getAll(user, req.body);
-    res.redirect('/', )
+    
+    res.render('functionalities/success-failure', {
+        pageTitle: 'Success & Failures',
+        message: "coming soon"
+    })
 }
 
 const addSF = async(req, res, next) => {

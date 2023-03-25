@@ -6,8 +6,8 @@ const Todo = class Todo{
     static getAll(userId){
         const db = getDB();
         userId = userId._id;
-        console.log('id is ')
-        console.log(userId);
+        // console.log('id is ')
+        // console.log(userId);
 
         // return true
         const tasks = db.collection('todo').findOne({userId: (userId)});
@@ -20,8 +20,8 @@ const Todo = class Todo{
         return db.collection('todo').findOne({userId: userId}).then(userData => {
             const tasks = {...userData.tasks}
             const keys = Object.keys(tasks);
-            console.log('inside getone');
-            console.log(keys[ind]);
+            // console.log('inside getone');
+            // console.log(keys[ind]);
             return keys[ind];
         })
     }
@@ -31,7 +31,7 @@ const Todo = class Todo{
         //Add a new task 'task' for the user 'userId'
         const db = getDB();
         userId = userId._id;
-        console.log('insdie add')
+        // console.log('insdie add')
         return db.collection('todo').findOne({userId: new ObjectId(userId)}).then(userData => {
             let tasks = {};
             if(!userData){
@@ -42,7 +42,7 @@ const Todo = class Todo{
                     userId: new ObjectId(userId),
                     tasks: tasks
                 };
-                console.log('inserted')
+                // console.log('inserted')
                 return db.collection('todo').insertOne(document);
             }else{
                 //already some todo exists for this user
@@ -61,21 +61,19 @@ const Todo = class Todo{
             const keys = Object.keys(tasks);
             tasks[task] = false;
             delete tasks[keys[ind]];
-            console.log(tasks);
+            // console.log(tasks);
             return db.collection('todo').updateOne({_id: new ObjectId(userData._id)}, {$set: {tasks: tasks}});
         })
     }
 
     static delete(user, ind){
         const db = getDB();
-        console.log('inside dlete')
-        // console.log(userId);
         return db.collection('todo').findOne({userId: (user._id)}).then(userData => {
             const tasks = {...userData.tasks};
             const keys = Object.keys(tasks);
             //task is an object and we need to delete ind index of task
             delete tasks[keys[ind]];
-            console.log(tasks);
+            // console.log(tasks);
             return db.collection('todo').updateOne({_id: new ObjectId(userData._id)}, {$set: {tasks: tasks}});
         })
     }
@@ -101,7 +99,7 @@ const Todo = class Todo{
                         userId: new ObjectId(userId),
                         tasks: tasks
                     };
-                    console.log('inserted')
+                    // console.log('inserted')
                     return db.collection('queue').insertOne(document);
                 }else{
                     //already some queue exists for this user

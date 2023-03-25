@@ -1,13 +1,14 @@
 <%- include('../include/head.ejs') %>
 <!-- to add -->
-        <link href = '/CSS/navbar.css' type = 'text/css' rel = 'stylesheet' />
-        <link href = '/CSS/login.css' type = 'text/css' rel = 'stylesheet' />
+<link href = '/css/navbar.css' type = 'text/css' rel = 'stylesheet' />
+<link href = '/css/login.css' type = 'text/css' rel = 'stylesheet' />
     </head>
     <body>
         <%- include('../include/navbar.ejs') %>
         <main>
             <div class = 'container'>
                 <h1 class = 'heading'>Success Failure</h1>
+                <h1><%= message %></h1>
             </div>
         </main>
 <%- include('../include/foot.ejs') %>
