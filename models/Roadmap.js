@@ -6,8 +6,6 @@ const roadMap = class roadMap{
     static find(userId){
         const db = getDB();
         userId = userId._id;
-        console.log('id is ')
-        console.log(userId);
 
         // return true
         return db.collection('roadMap').findOne({userId: (userId)}).then(road => {
@@ -22,7 +20,6 @@ const roadMap = class roadMap{
         return db.collection('roadMap').findOne({userId: userId}).then(userData => {
             const roadMap = {...userData.roadmap}
             const keys = Object.keys(roadMap);
-            console.log(keys[ind]);
             return keys[ind];
         })
     }
@@ -31,7 +28,6 @@ const roadMap = class roadMap{
         //Add a new task 'task' for the user 'userId'
         const db = getDB();
         userId = userId._id;
-        console.log('insdie add')
         return db.collection('roadMap').findOne({userId: new ObjectId(userId)}).then(userData => {
             let roadmap = {};
             if(!userData){
@@ -42,7 +38,6 @@ const roadMap = class roadMap{
                     userId: new ObjectId(userId),
                     roadmap: roadmap
                 };
-                console.log('inserted')
                 return db.collection('roadMap').insertOne(document);
             }else{
                 //already some roadMap exists for this user
@@ -61,8 +56,6 @@ const roadMap = class roadMap{
             const keys = Object.keys(roadmap);
             roadmap[task] = true;
             delete roadmap[keys[ind]]
-            console.log('inside model update')
-            console.log(roadmap);
             return db.collection('roadMap').updateOne({_id: new ObjectId(userData._id)}, {$set: {roadmap: roadmap}});
         })
     }

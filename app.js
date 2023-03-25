@@ -15,6 +15,7 @@ const thoughtsRoutes = require('./routes/thoughts');
 const queueRoutes = require('./routes/queue');
 const sfRoutes = require('./routes/success-failures')
 
+app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
@@ -37,7 +38,6 @@ app.use('/roadmap', roadmapRoutes);
 app.use('/thoughts', thoughtsRoutes);
 app.use('/queue', queueRoutes);
 app.use('/success-failures', sfRoutes);
-app.use(express.static(path.join(__dirname, 'public')));
 
 const port = process.env.PORT || 3000
 
